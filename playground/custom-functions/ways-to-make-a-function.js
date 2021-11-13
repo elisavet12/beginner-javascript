@@ -9,9 +9,15 @@ console.log("it works");
 
 const doctorize = function (firstName) {
   return `Dr. ${firstName}`;
-};
-
-function inchToCM(inches){
-    return inches*2.54;
 }
 
+
+/* eslint-disable */
+const inchToCM = (inches) => inches * 2.54;
+
+function add(a, b=3){
+const total=a+b;
+return total;
+}
+
+// const add(a,b=3)=>a+b;
