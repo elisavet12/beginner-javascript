@@ -72,3 +72,7 @@ const wes = {
     console.log("HEY WESSSSS");
   },
 };
+
+sayHi: function sayHi(){
+  console.log(this);
+}
