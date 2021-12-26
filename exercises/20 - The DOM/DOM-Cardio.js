@@ -70,20 +70,65 @@ myDiv.firstElementChild.remove();
 
 // create a function called generatePlayerCard that takes in three arguments: name, age, and height
 
+function generatePlayerCard(name, age, height){
+    const html= `
+    <div class="playerCard">
+    <h2>${name}-${age}</h2>
+    <p> They are ${height} and ${age} years old. In Dog years this person would be ${age*7}. That would be a tall dog!</p>
+    <button class="delete" type="button">&times Delete</button>
+    </div>`;
+    return html;
+
+}
+
 // have that function return html that looks like this:
 // <div class="playerCard">
 //   <h2>NAME — AGE</h2>
 //   <p>They are HEIGHT and AGE years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
 // </div>
 
+
+
 // make a new div with a class of cards
+const cards = document.createElement('div');
+cards.classList.add('cards');
 
 // make 4 player cards using generatePlayerCard
 
+let cardsHTML= generatePlayerCard('wes', 12, 150);
+cardsHTML=cardsHTML+generatePlayerCard('scott', 12, 150);
+cardsHTML=cardsHTML+generatePlayerCard('kait', 12, 150);
+cardsHTML=cardsHTML+generatePlayerCard('snickers', 12, 150);
+console.log(cardsHTML);
+
 // append those cards to the div
+cards.innerHTML=cardsHTML;
+
 // put the div into the DOM just before the wrapper element
+
+div.insertAdjacentElement('beforebegin', cards);
 // Bonus, put a delete Button on each card so when you click it, the whole card is removed
+const buttons=document.querySelectorAll('.delete');
+console.log(buttons);
+
+function deleteCard(){
+    console.log("DELETE CARD! TODO");
+}
+
+buttons.forEach(button => button.addEventListener("click", deleteCard));
+
 
 // select all the buttons!
 // make out delete function
 // loop over them and attach a listener
+
+function deleteCard(event) {
+  console.log(event.currentTarget);
+  console.log("DELETE CARD! TODO");
+}
+const buttonThatGotClicked = event.currentTarget;
+
+function deleteCard(event) {
+  const buttonThatGotClicked = event.currentTarget;
+  buttonThatGotClicked.parentElement.remove();
+}
