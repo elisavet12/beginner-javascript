@@ -1,4 +1,4 @@
-console.log('it works');
+
 
 const wes=document.querySelector(".wes");
 wes.addEventListener("click",function(event){
@@ -12,32 +12,39 @@ wes.addEventListener("click",function(event){
     console.log(shouldChangePage);
 });
 
-function signupForm(event){
+
+
+// function logEvent(event) {
+//   console.log(event.type);
+//   console.log(event.currentTarget.value);
+// }
+
+// const photo= document.querySelector(".photo"); 
+// photo.addEventListener("click", function handlePhotoClick(){
+//     console.log("you clicked the photo");
+// });
+
+
+
+
 const signupForm = document.querySelectorAll('[name="signup"]');
-signupForm.addEventListener('submit', function(event) {
-  console.log(event);
-  event.preventDefault();
-});
-}
 
-function logEvent(event) {
-  console.log(event.type);
-  console.log(event.currentTarget.value);
-}
-
-const photo= document.querySelector(".photo");
-photo.addEventListener("click", function handlePhotoClick(){
-    console.log("you clicked the photo");
-});
+console.log(signupForm);
 
 
-
-
-// const signupForm = document.querySelectorAll('[name="signup"]');
+// const signupFormData = new FormData(signupForm);
 
 // signupForm.addEventListener('submit', function(event) {
-//   console.log(event);
 //   event.preventDefault();
+
+//   const name = signupFormData.get("name");
+
+//   if (condition) {
+    
+//   }
+  
+//   console.log('bla bla');
+  
 // });
 
 // signupForm.addEventListener('submit', function(event) {
@@ -47,7 +54,9 @@ photo.addEventListener("click", function handlePhotoClick(){
 //     event.preventDefault();
 //   }
 // });
-// signupForm.addEventListener('submit', function(event){
+// signupForm[0].addEventListener('submit', function(event){
 //     event.preventDefault();
 //     console.dir(event.currentTarget);
 // })
+
+// console.log(signupForm);

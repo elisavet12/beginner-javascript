@@ -40,7 +40,7 @@ function handleKey(e) {
     if (e.key.includes("Arrow")) {
         e.preventDefault();
   console.log(e.key);
-  console.log("HANDLING KEY")
+  console.log("HANDLING KEY");
     }
   ;
 }
@@ -54,16 +54,22 @@ function handleKey(e) {
 
 // write a draw function
 
-function draw(options){
-    console.log(options.key);
+function draw({key}){
+console.log(key);
+ctx.beginPath();
+ctx.moveTo(x, y);
+x = x - 10;
+y = y - 10;
+ctx.lineTo(x, y);
+ctx.stroke();
 
 }
 
-functionHandleKey(e) {
+function HandleKey(e) {
   if(e.key.includes('Arrow')) {
     e.preventDefault();
     draw({ key: e.key });
-    console.log(e.key);
-    console.log('HANDLING KEY');
-  }
+    // console.log(e.key);
+    // console.log('HANDLING KEY');
+  };
 }
