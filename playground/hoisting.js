@@ -31,4 +31,29 @@ const word = count === 1 ? 'item' : 'items';
 const sentence = `You have ${count} ${word} in your cart`;
 console.log(sentence);
 
+const isAdmin = true;
 isAdmin ? showAdminBar() : null;
+isAdmin && showAdminBar();
+
+
+function check1(){
+  
+  console.log('Running check 1');
+  return true;
+}
+function check2(){
+  
+  console.log('Running check 2');
+  return false;
+}
+function check3(){
+  
+  console.log('Running check 3');
+  return true;
+}
+if (check1() && check2() && check3()) {
+  console.log('all checks passed');
+}else {
+  console.log('Some checks failed');
+}
+
