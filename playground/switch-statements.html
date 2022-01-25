@@ -10,11 +10,57 @@
 
 
 <body>
+  <style>
+    .turt {
+      position: relative;
+      --x: 10px;
+      --y: 10px;
+      transform: translateX(var(--x)) translateY(var(--y));
+      transition: transform 0.2s;
+    }
+  </style>
   <img src="./turtle.png" alt="Turt" class="turt" width="200">
 
 </body>
 <script>
   const turtle = document.querySelector(".turt");
   console.log(turtle);
+
+  let x = 0;
+  let y = 0;
+  let speed = 50;
+
+function handleKeyDown(event){
+  if (!event.key.includes("Arrow")){
+    return;
+  }
+  console.log(event.key);
+
+  switch (event.key) {
+    case 'ArrowUp':
+      y = y - 1;
+      break;
+    case 'ArrowDown':
+      y = y + 1;
+      break;
+    case 'ArrowLeft':
+      x = x - 1;
+      break;
+    case 'ArrowRight':
+      x = x + 1;
+      break;
+    default:
+      console.log("That is not a valid move");
+      break;
+  }
+  
+  console.log(x,y);
+turtle.setAttribute("style", `--x:${x * speed}px; --y:${y * speed}px`);
+  
+}
+
+window.addEventListener("keydown", handleKeyDown);
+
+
 </script>
 </html>
